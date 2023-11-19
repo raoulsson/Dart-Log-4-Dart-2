@@ -12,9 +12,9 @@ dependencies:
   basic_utils: ^5.6.1
   intl: ^0.18.1
   mailer: ^6.0.1
-  meta: 1.10.1
+  meta: ^1.10.1
   mysql1: ^0.20.0
-  coverage: 1.7.0
+  coverage: ^1.7.0
   vm_service: ^12.0.0
 
 dev_dependencies:
