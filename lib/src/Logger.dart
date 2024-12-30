@@ -93,22 +93,11 @@ class Logger {
   /// Iterate over each configured appender and append the logRecord.
   ///
   void log(Level logLevel, Object message, String? tag, [Object? error, StackTrace? stackTrace, Object? object, int depthOffset = 0]) {
-    print('logLevel: $logLevel');
-    print('message: $message');
-    print('tag: $tag');
-    print('error: $error');
-    print('stackTrace: $stackTrace');
-    print('object: $object');
-    print('depthOffset: $depthOffset');
-
-    var totalDepthOffset = clientDepthOffset + depthOffset;
+      var totalDepthOffset = clientDepthOffset + depthOffset;
     var contextInfo = LoggerStackTrace.from(StackTrace.current, depthOffset: totalDepthOffset);
     var record = LogRecord(logLevel, message, tag, contextInfo, error: error, stackTrace: stackTrace, object: object, loggerName: loggerName);
     for (var app in appenders) {
-      print('app.level: ${app.level}');
-      print('logLevel: $logLevel');
       if (logLevel >= app.level!) {
-        print('app.append(record)');
         app.append(record);
       }
     }
