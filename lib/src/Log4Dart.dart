@@ -10,7 +10,7 @@ import 'Logger.dart';
 /// Alternatively, use Logger.debug(...) etc directly.
 ///
 /// In either case, call Logger.init(config) once in main!
-class Log4Dart {
+mixin Log4Dart {
   void logTrace(Object message, {String? tag, Object? exception, StackTrace? stackTrace, Object? object}) {
     Logger.trace(message, tag: tag, exception: exception, stackTrace: stackTrace, object: object);
   }
